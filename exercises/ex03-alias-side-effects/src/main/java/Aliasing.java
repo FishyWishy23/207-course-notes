@@ -37,9 +37,15 @@ public class Aliasing {
      *
      * @param arr    the array to modify
      * @param amount the value to add to each element
+     * @return
      */
-    public static void addInPlace(int[] arr, int amount) {
+    public static int[] addInPlace(int[] arr, int amount) {
         // TODO: complete
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] += amount;
+        }
+
+        return arr;
     }
 
     /**
@@ -52,6 +58,16 @@ public class Aliasing {
      */
     public static int[] addCopy(int[] arr, int amount) {
         // TODO: complete
-        return new int[1];
+        int[] copy = new int[arr.length];
+
+        for (int i = 0; i < arr.length; i++) {
+            copy[i] = arr[i];
+        }
+
+        for (int i = 0; i < copy.length; i++) {
+            copy[i] += 10;
+        }
+
+        return copy;
     }
 }
